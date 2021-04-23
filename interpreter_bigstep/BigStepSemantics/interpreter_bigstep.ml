@@ -8,7 +8,7 @@ type exp =
   | Mult of exp * exp
 
   exception Eval_error
-
+(*syntax*)
   let rec string_of_exp (e : exp) =
     match e with
     | IsZero (expression) ->
@@ -25,7 +25,7 @@ type exp =
        "False"
     | Num i -> "(Num " ^ string_of_int i ^ ")";;
 
-
+(*BigStep*)
     let rec eval (e : exp) =
       match e with
       | Num i -> Num i
